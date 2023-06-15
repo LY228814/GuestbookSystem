@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NavMaster.master.cs" Inherits="GuestbookSystem.NavMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>留言簿系统</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/font.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div class="container">
+                <div id="logo">
+                    <a href="./">&nbsp;</a>
+                </div>
+                <div class="user">
+                    <div class="user_up right dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <asp:Image ID="Imagname" runat="server" />
+                            欢迎 &nbsp;<asp:Label ID="name" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="Gendar" runat="server" Text="Label"></asp:Label>
+                            <span class="caret"></span></a>
+                        <ul class="nav nav-pills dropdown-menu">
+                            <li>
+                                <a class="item" href="index.aspx"><span class="glyphicon glyphicon-hand-left"></span>返回首页</a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="ZXDL" CssClass="item" runat="server" OnClick="ZXDL_Click"><i class="glyphicon glyphicon-log-out"></i>注销登录</asp:LinkButton></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="my_navbar" role="navigation">
+                <div class="container">
+                    <ul class="nav nav-pills" id="mynav">
+                        <li>
+                            <a href="index.aspx"><span class="glyphicon glyphicon-home"></span>信息首页</a>
+                        </li>
+                        <li>
+                            <a href="myifmt.aspx"><span class="glyphicon glyphicon-user"></span>我的信息</a>
+                        </li>
+                        <li>
+                            <a href="Information.aspx"><span class="glyphicon glyphicon-book"></span>发布信息</a>
+                        </li>
+                        <li>
+                            <a href="personaldata.aspx"><span class="glyphicon glyphicon-user"></span>个人资料</a>
+                        </li>
+                        <li>
+                            <a href="UserIM.aspx"><span class="glyphicon glyphicon-cog"></span>用户管理</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+        <div class="clear"></div>
+        <!--内容开始-->
+        <div class="container">
+            <div class="box_left  col-xs-3">
+                <ul class="nav nav-tabs nav-stacked affix-top" style="width: 100%;">
+                    <li>
+                        <a href="index.aspx"><span class="glyphicon glyphicon-home"></span>信息首页</a>
+                    </li>
+                    <li>
+                        <a href="myifmt.aspx"><span class="glyphicon glyphicon-user"></span>我的信息</a>
+                    </li>
+                    <li>
+                        <a href="Information.aspx"><span class="glyphicon glyphicon-book"></span>发布信息</a>
+                    </li>
+                    <li>
+                        <a href="personaldata.aspx"><span class="glyphicon glyphicon-user"></span>个人资料</a>
+                    </li>
+                    <li>
+                        <a href="UserIM.aspx"><span class="glyphicon glyphicon-cog"></span>用户管理</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="margin-bottom: 50px">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
